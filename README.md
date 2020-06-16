@@ -32,19 +32,19 @@ Ruby on Rails 5.2.4
 
 カタログ設計
 
-https://docs.google.com/spreadsheets/d/13allHuVFfwKXJ88F_V8bZ1S8abB0fkjBP0AmMAYhPMA/edit#gid=0
+https://docs.google.com/spreadsheets/d/13allHuVFfwKXJ88F_V8bZ1S8abB0fkjBP0AmMAYhPMA/edit?usp=sharing
 
 テーブル定義
 
-https://docs.google.com/spreadsheets/d/1XxphqQlXyMT1oYOvfl0YuZHsZAMdDfl72m7rFfBwMFI/edit#gid=0
+https://docs.google.com/spreadsheets/d/1XxphqQlXyMT1oYOvfl0YuZHsZAMdDfl72m7rFfBwMFI/edit?usp=sharing
 
 画面遷移図
 
-https://cacoo.com/diagrams/IEG62r6Xmedv94DR/00F34?reload_rt=1592246944696_0
+https://cacoo.com/diagrams/IEG62r6Xmedv94DR/00F34
 
 ワイヤーフレーム
 
-https://cacoo.com/diagrams/H71RlhIEmIIB2Ndo/C9B6C?reload_rt=1592245686170_0
+https://cacoo.com/diagrams/H71RlhIEmIIB2Ndo/C9B6C
 
 使用予定gem
 
@@ -52,6 +52,14 @@ devise
 kaminari
 ransack
 cancancan
+
+就職termからの実装
+    devise コメント機能
+
+カリキュラム外の実装
+    Activerecord import
+
+
 
 
 
