@@ -47,6 +47,9 @@ https://docs.google.com/spreadsheets/d/13allHuVFfwKXJ88F_V8bZ1S8abB0fkjBP0AmMAYh
 
 https://docs.google.com/spreadsheets/d/1XxphqQlXyMT1oYOvfl0YuZHsZAMdDfl72m7rFfBwMFI/edit?usp=sharing
 
+ER図
+https://drive.google.com/file/d/1bkTFnQR5G1IaM_4PU4dkaAt77fTmRp2_/view?usp=sharing
+
 画面遷移図
 
 https://cacoo.com/diagrams/IEG62r6Xmedv94DR/00F34
