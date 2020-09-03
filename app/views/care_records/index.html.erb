@@ -1,0 +1,12 @@
+<h1>〜様の介護記録</h1>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+<% @care_records.each do |care_record| %>
+  <tr>
+    <td><%= care_record.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '記録を書く', new_care_record_path %>

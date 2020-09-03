@@ -80,7 +80,7 @@ cancancan
 カリキュラム外の実装
 
     Activerecord import
-
+         チェック記録の一括入力の実装
 
 
 
