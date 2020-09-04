@@ -1,0 +1,19 @@
+<%= form_with(model: @care_record, local: true) do |form| %>
+  <% if @care_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @care_record.errors.count %>、入力しないで保存はできません。</h2>
+      <ul>
+      <% @care_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="care_record_content">
+    <%= form.label :介護記録 %>
+    <%= form.text_field :content %>
+  </div>
+  
+  <%= form.submit %>
+<% end %>
+<%= link_to '介護一覧画面に戻る', care_records_path %>
