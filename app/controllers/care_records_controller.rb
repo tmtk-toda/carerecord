@@ -8,7 +8,6 @@ class CareRecordsController < ApplicationController
   end
   def create
     @care_record = CareRecord.new(care_record_params)
-    @care_record.client.id = client.client.id
     if @care_record.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to care_records_path, notice: "記録作成しました！"
