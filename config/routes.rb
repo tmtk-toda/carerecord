@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root 'clients#index'
   get 'clients/index'
   get '/clients', to: 'clients#index'
   get 'care_records/index'
   get '/care_records', to: 'care_records#index'
-  resources :care_records
   resources :clients
+  resources :clients do
+    resources :care_records
+  end
+  
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

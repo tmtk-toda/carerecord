@@ -1,9 +1,9 @@
-<%= form_with(model: @care_record, local: true) do |form| %>
-  <% if @care_record.errors.any? %>
+<%= form_with(model: @client_care_record, url:client_care_records_path, local: true) do |form| %>
+  <% if @client_care_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @care_record.errors.count %>、入力しないで保存はできません。</h2>
+      <h2><%= @client_care_record.errors.count %>、入力しないで保存はできません。</h2>
       <ul>
-      <% @care_record.errors.full_messages.each do |msg| %>
+      <% @client_care_record.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -16,4 +16,4 @@
   
   <%= form.submit %>
 <% end %>
-<%= link_to '介護記録一覧画面に戻る', care_records_path %>
+<%= link_to '介護記録一覧画面に戻る', client_care_records_path %>
