@@ -12,6 +12,7 @@
   <div class="care_record_content">
     <%= form.label :介護記録 %>
     <%= form.text_field :content %>
+    <%= form.hidden_field :client_id %>
   </div>
   
   <%= form.submit %>

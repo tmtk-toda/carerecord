@@ -5,6 +5,8 @@ class CareRecordsController < ApplicationController
   end
   def new
     @care_record = CareRecord.new
+    @care_record.client_id = params[:client_id]
+  
   end
   def create
     @care_record = CareRecord.new(care_record_params)
@@ -36,7 +38,7 @@ class CareRecordsController < ApplicationController
   end
   private
   def care_record_params
-    params.require(:care_record).permit(:content)
+    params.require(:care_record).permit(:content, :client_id)
   end
   def set_care_record
     @care_record = CareRecord.find(params[:id])
