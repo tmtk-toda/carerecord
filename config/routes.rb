@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'clients/index'
   get '/clients', to: 'clients#index'
   get 'care_records/index'
