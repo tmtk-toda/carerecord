@@ -19,7 +19,7 @@
     <td><%= link_to "編集する", edit_client_path(client.id) %></td>
     <td><%= link_to '削除する', client_path(client.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
     <td><%= link_to '介護一覧画面', care_records_path(client.id) %></td>
-    <td><%= link_to '記録を書く', new_care_record_path(client_id: client.id, user_id: current_user.id) %></td>
+    <td><%= link_to '記録を書く', new_care_record_path(client_id: client.id) %></td>
   </tr>
 <% end %>
 </table>
