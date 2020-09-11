@@ -1,5 +1,5 @@
 class CareRecordsController < ApplicationController
-  before_action :set_care_record, only: [:new, :edit, :update, :destroy]
+  before_action :set_care_record, only: [:edit, :update, :destroy]
   before_action :authenticate_user! 
   def index
     @care_records = CareRecord.all
@@ -7,6 +7,7 @@ class CareRecordsController < ApplicationController
   def new
     @care_record = CareRecord.new
     @care_record.client_id = params[:client_id]
+    @care_record.user_id = current_user.id
   
   end
   def create
@@ -39,7 +40,7 @@ class CareRecordsController < ApplicationController
   end
   private
   def care_record_params
-    params.require(:care_record).permit(:content, :client_id)
+    params.require(:care_record).permit(:content, :client_id, :user_id)
   end
   def set_care_record
     @care_record = CareRecord.find(params[:id])
