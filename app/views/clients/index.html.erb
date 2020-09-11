@@ -1,4 +1,5 @@
 <h1><%= Date.current.strftime('%Y年 %m月 %d日') %></h1>
+<h3> 現在 <%= current_user.name %> さんがログインしています </h3> <!-- ここを追加します -->
 <h1>利用者様一覧</h1>
 <table>
   <tr>
@@ -24,3 +25,4 @@
 <% end %>
 </table>
 <%= link_to '利用者様登録', new_client_path %>
+<%= link_to 'トップ画面にもどる', users_index_path %>
