@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :labels
   devise_for :users
   get 'users/index'
   get '/users', to: 'users#index'

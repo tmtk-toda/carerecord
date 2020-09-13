@@ -13,7 +13,7 @@
     <td><%= care_record.client.name %>様</td>
     <td><%= care_record.content %></td>
     <td><%= link_to '詳細確認', care_record_path(care_record.id) %></td>
-    <td><%= link_to "編集する", edit_care_record_path(care_record.id) %></td>
+    <td><%= link_to "編集する", edit_care_record_path(care_record.id,edit_care_record_path(care_record)) %></td>
     <td><%= link_to '削除する', care_record_path(care_record.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
