@@ -42,7 +42,7 @@ class CareRecordsController < ApplicationController
   end
   private
   def care_record_params
-    params.require(:care_record).permit(:content, :client_id, :user_id, label_ids: [])
+    params.require(:care_record).permit(:content, :client_id, :user_id, :content_date, label_ids: [])
   end
   def set_care_record
     @care_record = CareRecord.find(params[:id])
