@@ -1,5 +1,5 @@
 class CareRecordsController < ApplicationController
-  before_action :set_care_record, only: [:edit, :update, :destroy]
+  before_action :set_care_record, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! 
   def index
     @care_records = CareRecord.all
@@ -22,8 +22,8 @@ class CareRecordsController < ApplicationController
   end
   def show
     # @care_record = CareRecord.find(params[:id])
-    # @comments = @care_record.comments
-    # @comment = @care_record.comments.build
+    @comments = @care_record.comments
+    @comment = @care_record.comments.build
   end
   def edit
     # @care_record = CareRecord.find(params[:id])
