@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/clients', to: 'clients#index'
   get 'care_records/index'
   get '/care_records', to: 'care_records#index'
-  resources :care_records
+  resources :care_records do
+    resources :comments
+  end
   resources :clients
   root 'users#index'
   if Rails.env.development?

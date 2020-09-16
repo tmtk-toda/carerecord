@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_073108) do
+ActiveRecord::Schema.define(version: 2020_09_14_061412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 2020_09_13_073108) do
     t.integer "user_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.bigint "care_record_id"
+    t.text "addcontent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["care_record_id"], name: "index_comments_on_care_record_id"
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -67,4 +75,5 @@ ActiveRecord::Schema.define(version: 2020_09_13_073108) do
 
   add_foreign_key "care_record_labels", "care_records"
   add_foreign_key "care_record_labels", "labels"
+  add_foreign_key "comments", "care_records"
 end

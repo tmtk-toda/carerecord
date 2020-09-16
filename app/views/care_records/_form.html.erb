@@ -12,7 +12,10 @@
   <div class="care_record_content">
     <%= form.label :介護記録 %>
     <%= form.text_field :content %>
+    <%= form.label :記入日 %>
+    <%= form.date_field :content_date %>
     <%= form.hidden_field :client_id %>
+    <%= form.hidden_field :user_id  %>
   </div>
 
   <div class="field">

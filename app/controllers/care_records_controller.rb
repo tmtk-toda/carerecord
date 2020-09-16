@@ -22,6 +22,8 @@ class CareRecordsController < ApplicationController
   end
   def show
     # @care_record = CareRecord.find(params[:id])
+    @comments = @care_record.comments
+    @comment = @care_record.comments.build
   end
   def edit
     # @care_record = CareRecord.find(params[:id])
@@ -40,7 +42,7 @@ class CareRecordsController < ApplicationController
   end
   private
   def care_record_params
-    params.require(:care_record).permit(:content, :client_id, :user_id, label_ids: [])
+    params.require(:care_record).permit(:content, :client_id, :user_id, :content_date, label_ids: [])
   end
   def set_care_record
     @care_record = CareRecord.find(params[:id])
