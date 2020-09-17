@@ -2,7 +2,6 @@ class CareRecordsController < ApplicationController
   before_action :set_care_record, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! 
   def index
-    # binding.pry
     @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc")
   end
   def new
@@ -14,7 +13,7 @@ class CareRecordsController < ApplicationController
   def create
     @care_record = CareRecord.new(care_record_params)
     if @care_record.save
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
+      # 一覧画面へ遷移して"作成しました！"とメッセージを表示します。
       redirect_to care_records_path, notice: "記録作成しました！"
     else
       # 入力フォームを再描画します。
@@ -32,7 +31,7 @@ class CareRecordsController < ApplicationController
   def update
     # @care_record = CareRecord.find(params[:id])
     if @care_record.update(care_record_params)
-      redirect_to care_records_path, notice: "編集しました"
+      redirect_to care_records_index_path, notice: "編集しました"
     else
       render :edit
     end
