@@ -28,7 +28,7 @@
   </tr>
 <% end %>
 </table>
-<%= link_to 'トップ画面にもどる', users_index_path %>
+<%= link_to 'トップ画面にもどる', users_index_path, class: "btn btn-lg btn-primary" %>
 <% if current_user.admin? %>
   <%= link_to '利用者様登録', new_client_path %>
 <% end %>

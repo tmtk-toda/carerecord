@@ -11,7 +11,7 @@ class StaffInfosController < ApplicationController
     @staff_info.user_id = current_user.id
     if @staff_info.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to staff_infos_path, notice: "ブログを作成しました！"
+      redirect_to staff_infos_path, notice: "連絡事項を作成しました！"
     else
       # 入力フォームを再描画します。
       render :new
