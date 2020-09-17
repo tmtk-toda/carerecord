@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Label.create!(
-   title: "入浴済み"
-)
-Label.create!(
-   title: "体操参加"
-)
+# Label.create!(
+#    title: "入浴済み"
+# )
+# Label.create!(
+#    title: "体操参加"
+# )
+5.times do |n|
+   Client.create!(
+     name: "女性利用者sample#{n + 1}",
+     sex: "女性"
+   )
+end
