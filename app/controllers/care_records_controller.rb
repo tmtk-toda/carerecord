@@ -3,7 +3,7 @@ class CareRecordsController < ApplicationController
   before_action :authenticate_user! 
   def index
     # binding.pry
-    @care_records = CareRecord.where(client_id: params[:client_id]) 
+    @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc")
   end
   def new
     @care_record = CareRecord.new
