@@ -5,6 +5,10 @@
 <p>お誕生日: <%= @client.born_on %></p>
 <p>年齢: <%= @client.age %></p>
 <p>情報: <%= @client.information %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @client.image.url %>
+</p>
 
 <%= link_to '利用者様一覧へ', clients_path %>
 
