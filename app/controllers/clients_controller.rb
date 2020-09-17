@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
     @client = Client.new
   end
   def create
-    Client.create(params.require(:client).permit(:name, :sex, :born_on, :age, :information))
+    Client.create(params.require(:client).permit(:name, :sex, :born_on, :age, :information, :image, :image_cache))
   redirect_to clients_path
   end
   def show
@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
   end
   private
   def client_params
-    params.require(:client).permit(:name, :sex, :born_on, :age, :information)
+    params.require(:client).permit(:name, :sex, :born_on, :age, :information, :image, :image_cache)
   end
   def set_client
     @client = Client.find(params[:id])
