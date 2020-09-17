@@ -1,0 +1,19 @@
+<h1>連絡事項一覧</h1>
+<table>
+  <tr>
+    <th>記入者</th>
+    <th>記入日</th>
+    <th>内容</th>
+  </tr>
+<% @staff_infos.each do |staff_info| %>
+  <tr>
+    <td><%= staff_info.user.name %></td>
+    <td><%= staff_info.info_date %></td>
+    <td><%= staff_info.info %></td>
+    <td><%= link_to "編集する", edit_staff_info_path(staff_info.id) %></td>
+    <td><%= link_to '削除する', staff_info_path(staff_info.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新規連絡事項作成', new_staff_info_path %>
+<%= link_to 'トップ画面にもどる', users_index_path %>

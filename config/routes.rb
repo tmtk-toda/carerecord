@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'staff_infos/index'
+  get '/staff_infos', to: 'staff_infos#index'
+  resources :staff_infos
   resources :labels
   devise_for :users
   get 'users/index'
