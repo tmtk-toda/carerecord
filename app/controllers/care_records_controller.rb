@@ -2,8 +2,12 @@ class CareRecordsController < ApplicationController
   before_action :set_care_record, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! 
   def index
-    @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc")
-  end
+    if session[:client_id] == nil
+      @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc")
+    else
+      @care_records = CareRecord.where(client_id: session[:client_id]).order(content_date: "desc")  
+    end
+  end 
   def new
     @care_record = CareRecord.new
     @care_record.client_id = params[:client_id]
@@ -31,9 +35,8 @@ class CareRecordsController < ApplicationController
   def update
     # @care_record = CareRecord.find(params[:id])
     if @care_record.update(care_record_params)
-      session[:client_id] = params[:client_id]
+      session[:client_id] = @care_record.client_id
       redirect_to care_records_path, notice: "編集しました"
-      binding.pry
     else
       render :edit
     end
