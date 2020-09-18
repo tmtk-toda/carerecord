@@ -69,8 +69,6 @@ devise
 
 kaminari
 
-ransack
-
 cancancan
 
 就職termからの実装

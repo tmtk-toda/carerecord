@@ -31,7 +31,9 @@ class CareRecordsController < ApplicationController
   def update
     # @care_record = CareRecord.find(params[:id])
     if @care_record.update(care_record_params)
-      redirect_to care_records_index_path, notice: "編集しました"
+      session[:client_id] = params[:client_id]
+      redirect_to care_records_path, notice: "編集しました"
+      binding.pry
     else
       render :edit
     end

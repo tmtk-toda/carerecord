@@ -8,7 +8,7 @@
     <h4> 管理者権限があります。利用者の登録、編集、削除と、全ての介護記録の編集、削除ができます。</h4>
   <% end %>
   <h3><%= link_to 'スタッフ連絡事項画面へ', staff_infos_path %></h3>
-  <h3><%= link_to "利用者一覧画面へ", clients_path %></h3>
+  <h3><%= link_to "利用者一覧画面へ", clients_path %></h3
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->

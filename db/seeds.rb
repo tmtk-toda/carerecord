@@ -12,10 +12,10 @@
 # Label.create!(
 #    title: "体操参加"
 # )
-3.times do |n|
+5.times do |n|
    Client.create!(
      name: "男性利用者sample#{n + 1}",
      sex: "男性",
-     image: File.open('carerecord/app/assets/images/sample.png')
+     image: File.open('./app/assets/images/sample.png')
    )
 end
