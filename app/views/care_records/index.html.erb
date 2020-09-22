@@ -1,7 +1,8 @@
+<div class="list-group">
 <h1><%= Date.current.strftime('%Y年 %m月 %d日') %></h1>
 <h3> 現在 <%= current_user.name %> さんがログインしています </h3> <!-- ここを追加します -->
 <h1>介護記録</h1>
-<table>
+<table class="table">
   <tr>
     <th>記録記入日付</th>
     <th>記入者</th>
@@ -26,5 +27,6 @@
   </tr>
 <% end %>
 </table>
+</div>
 <%= link_to '利用者様一覧へ', clients_path, class: "btn btn-lg btn-primary" %>
 <td><%= link_to '記録を書く', new_care_record_path(client_id: params[:client_id]) %></td>
