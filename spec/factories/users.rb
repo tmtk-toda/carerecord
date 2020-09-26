@@ -4,7 +4,7 @@ FactoryBot.define do
   # （実際に存在するクラス名と一致するテストデータの名前をつければ、そのクラスのテストデータを自動で作成します）
   factory :user do
     name { 'aaaaaa' }
-    email { 'aaaaaa@example.com' }
+    email { 'aaaaaa@exam.com' }
     password { '111111' }
     admin { true }
   end

@@ -5,14 +5,12 @@ FactoryBot.define do
   factory :client do
     name { 'factory_sample_client1' }
     sex { '男性' }
-    user_id {1}
   end
   # 作成するテストデータの名前を「second_care-client」とします
   # （存在しないクラス名の名前をつける場合、オプションで「このクラスのテストデータにしてください」と指定します）
   factory :second_client, class: Client do
     name { 'factory_sample_client2' }
     sex { '女性' }
-    user_id {4}
     
     trait :skip_validate do
       to_create {|instance| instance.save(validate: false)}
