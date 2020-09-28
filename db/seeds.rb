@@ -12,10 +12,17 @@
 # Label.create!(
 #    title: "体操参加"
 # )
-5.times do |n|
-   Client.create!(
-     name: "男性利用者sample#{n + 1}",
-     sex: "男性",
-     image: File.open('./app/assets/images/sample.png')
-   )
-end
+# 5.times do |n|
+#    Client.create!(
+#      name: "男性利用者sample#{n + 1}",
+#      sex: "男性",
+#      image: File.open('./app/assets/images/sample.png')
+#    )
+# end
+
+User.create!(name:  "管理者",
+             email: "admin@exam.com",
+             password:  "111111",
+             password_confirmation: "111111",
+             admin: true)
+

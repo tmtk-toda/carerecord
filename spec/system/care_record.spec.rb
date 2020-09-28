@@ -9,7 +9,6 @@ RSpec.describe '介護記録機能', type: :system do
     # あらかじめケアレコード一覧のテストで使用するためのケアレコーどを作成する
     @client = FactoryBot.create(:client)
     care_record = FactoryBot.build(:care_record) 
-    current_user.name = @user.name
     FactoryBot.create(:care_record, client_id: @client.id, user_id: @user.id) 
     FactoryBot.create(:second_care_record, client_id: @client.id, user_id: @user.id)
     visit clients_path
@@ -33,6 +32,20 @@ RSpec.describe '介護記録機能', type: :system do
   end
   describe '一覧表示機能' do
     context '一覧画面に遷移した場合' do
+      before do
+        # @user = FactoryBot.create(:user)
+        visit new_user_session_path
+            fill_in 'user[email]', with: 'aaaaaa@exam.com' 
+            fill_in 'user[password]', with: '111111'
+            click_button "Log in"
+            
+        # あらかじめケアレコード一覧のテストで使用するためのケアレコーどを作成する
+        @client = FactoryBot.create(:client)
+        care_record = FactoryBot.build(:care_record) 
+        FactoryBot.create(:care_record, client_id: @client.id, user_id: @user.id) 
+        FactoryBot.create(:second_care_record, client_id: @client.id, user_id: @user.id)
+        visit clients_path
+      end
       it '作成済みの介護記録一覧が表示される' do
         # テストで使用するためのタスクを作成
         care_record = FactoryBot.create(:care_record, client_id: @client.id, user_id: @user.id, content: 'sample')
