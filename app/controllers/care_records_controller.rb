@@ -7,7 +7,7 @@ class CareRecordsController < ApplicationController
   #   else
   #     @care_records = CareRecord.where(client_id: session[:client_id]).order(content_date: "desc")  
   #   end
-   @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc")
+   @care_records = CareRecord.where(client_id: params[:client_id]).order(content_date: "desc").page(params[:page]).per(10)
   end 
   
   def new
