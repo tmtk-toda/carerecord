@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get 'staff_infos/index'
   get '/staff_infos', to: 'staff_infos#index'
   resources :staff_infos
