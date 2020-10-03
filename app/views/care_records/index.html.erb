@@ -2,7 +2,8 @@
 <h1><%= Date.current.strftime('%Y年 %m月 %d日') %></h1>
 <h3> 現在 <%= current_user.name %> さんがログインしています </h3> <!-- ここを追加します -->
 <h1>介護記録</h1>
-<table class="table">
+<div class="table-responsive">
+<table class="table table-striped table-bordered">
   <tr>
     <th>記録記入日付</th>
     <th>記入者</th>
@@ -29,5 +30,5 @@
 </table>
 </div>
 <%= link_to '利用者様一覧へ', clients_path, class: "btn btn-lg btn-primary" %>
-<td><%= link_to '記録を書く', new_care_record_path(client_id: params[:client_id]) %></td>
+<td><%= link_to '記録を書く', new_care_record_path(client_id: params[:client_id]) ,class: "btn btn-lg btn-primary" %></td>
 <%= paginate @care_records %>
