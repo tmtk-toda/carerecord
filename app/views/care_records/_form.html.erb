@@ -10,16 +10,16 @@
     </div>
   <% end %>
   <div class="care_record_content">
+    <%= form.label :実施した日付を入力してください %>
+    <%= form.date_field :content_date %>
     <%= form.label :介護記録 %>
     <%= form.text_field :content %>
-    <%= form.label :記入日 %>
-    <%= form.date_field :content_date %>
     <%= form.hidden_field :client_id %>
     <%= form.hidden_field :user_id  %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
+  <p>入浴済、体操参加されていればチェックを入れてください</p>
   <% Label.all.each do |label| %>
       <% if action_name == 'new' || action_name == 'create' %>
         <%= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false}, label[:id], "" %>
@@ -34,4 +34,4 @@
   
   <%= form.submit %>
 <% end %>
-<%= link_to '介護一覧画面に戻る', care_records_path %>
+<%= link_to '介護一覧画面に戻る', care_records_path, class: "btn btn-info" %>

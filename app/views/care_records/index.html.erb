@@ -29,6 +29,6 @@
 <% end %>
 </table>
 </div>
-<%= link_to '利用者様一覧へ', clients_path, class: "btn btn-lg btn-primary" %>
-<td><%= link_to '記録を書く', new_care_record_path(client_id: params[:client_id]) ,class: "btn btn-lg btn-primary" %></td>
+<%= link_to '利用者様一覧へ', clients_path, class: "btn btn-info" %>
+<td><%= link_to '記録を書く', new_care_record_path(client_id: params[:client_id]), class: "btn btn-info" %></td>
 <%= paginate @care_records %>
