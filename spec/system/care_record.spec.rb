@@ -18,15 +18,18 @@ RSpec.describe '介護記録機能', type: :system do
       it '作成した記録が表示される' do
         # 1. new_care_record_pathに遷移する（新規作成ページに遷移する）
       # ここにnew_care_record_pathにvisitする処理を書く
+      visit new_care_record_path
       # 2. 新規登録内容を入力する
       #「介護記録」というラベル名の入力欄と、「日付」というラベル名の入力欄にタスクのタイトルと内容をそれぞれ入力する
       # ここに「介護記録」というラベル名の入力欄に内容をfill_in（入力）する処理を書く
       # ここに「日付」というラベル名の入力欄に内容をfill_in（入力）する処理を書く
+      care_record = FactoryBot.create(:care_record, client_id: @client.id, user_id: @user.id, content: 'sample')
       # 3. 「登録する」というvalue（表記文字）のあるボタンをクリックする
       # ここに「登録する」というvalue（表記文字）のあるボタンをclick_onする（クリックする）する処理を書く
       # 4. clickで登録されたはずの情報が、記録詳細ページに表示されているかを確認する
       # （記録が登録されたら記録詳細画面に遷移されるという前提）
       # ここに記録詳細ページに、テストコードで作成したデータが記録詳細画面にhave_contentされているか（含まれているか）を確認（期待）するコードを書く
+      expect(page).to have_content 'sample'
       end
     end
   end
@@ -61,6 +64,14 @@ RSpec.describe '介護記録機能', type: :system do
   describe '詳細表示機能' do
      context '任意の介護記録詳細画面に遷移した場合' do
        it '該当記録の内容が表示される' do
+        # テストで使用するためのタスクを作成
+        care_record = FactoryBot.create(:care_record, client_id: @client.id, user_id: @user.id, content: 'sample')
+        # 介護詳細ページに遷移
+        visit care_records_path
+        # visitした（遷移した）page（タスク一覧ページ）に「sample」という文字列が
+        # have_contentされているか（含まれているか）ということをexpectする（確認・期待する）
+        expect(page).to have_content 'sample'
+        # expectの結果が true ならテスト成功、false なら失敗として結果が出力される
        end
      end
   end
