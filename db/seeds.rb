@@ -15,14 +15,14 @@
 5.times do |n|
    Client.create!(
      name: "男性利用者sample#{n + 1}",
-     sex: "男性",
+     sex: "男性"
    )
 end
 
 5.times do |n|
   Client.create!(
     name: "女性利用者sample#{n + 1}",
-    sex: "女性",
+    sex: "女性"
   )
 end
 
