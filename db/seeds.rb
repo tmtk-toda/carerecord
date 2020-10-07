@@ -11,7 +11,7 @@
 # )
 # Label.create!(
 #    title: "体操参加"
-)
+# )
 5.times do |n|
    Client.create!(
      name: "男性利用者sample#{n + 1}",
@@ -28,8 +28,9 @@ end
 
 # 5.times do |n|
 #   CareRecord.create!(
-#     content: "介護記録sample#{n + 1}、特変ありません。",
-#     content_date: "2020-06-01",
+#     client: care_record.client_id,
+#     content: "介護記録sample#{n + 1}",
+#     content_date: "2020-06-01"
 #   )
 # end
 
