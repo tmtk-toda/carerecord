@@ -13,7 +13,8 @@
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> ログインしてください </h2>
+  
   <%= link_to "新規登録", new_user_registration_path, class: "btn btn-default" %> <!-- 新規登録画面に移行する -->
   <%= link_to "ログイン", new_user_session_path, class: "btn btn-default" %> <!-- ログイン画面に移行する -->
 <% end %>
-
+  <h3>閲覧の方は[email: aaaaaa], [password: 111111],でログインをお願いします<h3>

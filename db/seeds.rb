@@ -6,23 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Label.create!(
-#    title: "入浴済み"
-# )
-# Label.create!(
-#    title: "体操参加"
-# )
-# 5.times do |n|
-#    Client.create!(
-#      name: "男性利用者sample#{n + 1}",
-#      sex: "男性",
-#      image: File.open('./app/assets/images/sample.png')
-#    )
-# end
+Label.create!(
+   title: "入浴済み"
+)
+Label.create!(
+   title: "体操参加"
+)
+5.times do |n|
+   Client.create!(
+     name: "男性利用者sample#{n + 1}",
+     sex: "男性",
+     image: File.open('./app/assets/images/sample.png')
+   )
+end
 
-User.create!(name:  "管理者",
-             email: "admin@exam.com",
-             password:  "111111",
-             password_confirmation: "111111",
-             admin: true)
+5.times do |n|
+  Client.create!(
+    name: "女性利用者sample#{n + 1}",
+    sex: "女性",
+    image: File.open('./app/assets/images/sample.png')
+  )
+end
+
+5.times do |n|
+  CareRecord.create!(
+    content: "介護記録sample#{n + 1}、特変ありません。",
+    content_date: "2020-06-01",
+  )
+end
+
+# User.create!(name:  "管理者",
+#              email: "admin@exam.com",
+#              password:  "111111",
+#              password_confirmation: "111111",
+#              admin: true)
 
