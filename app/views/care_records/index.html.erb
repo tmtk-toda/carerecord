@@ -9,6 +9,7 @@
     <th>記入者</th>
     <th>利用者様名</th>
     <th>内容</th>
+    <th>追加項目</td>
     <th>入浴と体操</th>
   </tr>
 <% @care_records.each do |care_record| %>
@@ -17,6 +18,14 @@
     <td><%= User.find(care_record.user_id).name %></td>
     <td><%= care_record.client.name %>様</td>
     <td><%= care_record.content %></td>
+    <td><% care_record.comments.each do |comment| %>
+      <% if comment.id.present? %>
+        <li>
+          <p>→<%= comment.addcontent %></p>
+        </li>
+      <% end %>
+    <% end %>
+    </td>
     <td><% care_record.care_record_labels.each do |care_record_label| %>
       <%= care_record_label.label.title %><br>
     <% end %></td>
